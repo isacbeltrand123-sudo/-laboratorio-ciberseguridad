@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel - Laboratorio de Ciberseguridad</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eef2f7;
+            color: #263449;
+        }
+
+        header {
+            background: #142b4a;
+            color: white;
+            padding: 22px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 23px;
+        }
+
+        .usuario {
+            font-size: 14px;
+        }
+
+        .contenedor {
+            padding: 35px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .bienvenida {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        .bienvenida h2 {
+            color: #173b68;
+            margin-bottom: 12px;
+        }
+
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .tarjeta {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000010;
+            border-left: 5px solid #2875bd;
+        }
+
+        .tarjeta h3 {
+            margin-bottom: 12px;
+            color: #173b68;
+        }
+
+        .tarjeta p {
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .estado {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 12px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .salir {
+            display: inline-block;
+            margin-top: 25px;
+            background: #b42332;
+            color: white;
+            padding: 12px 22px;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .salir:hover {
+            background: #8e1725;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Laboratorio de Ciberseguridad</h1>
+
+        <div class="usuario">
+            Usuario: <strong>{{ session["usuario"] }}</strong>
+        </div>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="bienvenida">
+            <h2>¡Bienvenido al sistema!</h2>
+
+            <p>
+                Has iniciado sesión correctamente.
+                Bienvenido al panel principal del Laboratorio
+                de Ciberseguridad.
+            </p>
+
+            <span class="estado">● Sesión activa</span>
+        </section>
+
+        <section class="tarjetas">
+
+            <div class="tarjeta">
+                <h3>👤 Usuarios</h3>
+                <p>
+                    Módulo destinado a la gestión
+                    de usuarios del sistema.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🔐 Seguridad</h3>
+                <p>
+                    Área de información sobre
+                    seguridad y protección de cuentas.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>🗄️ Base de datos</h3>
+                <p>
+                    Sistema de almacenamiento
+                    de información de usuarios.
+                </p>
+            </div>
+
+            <div class="tarjeta">
+                <h3>📋 Actividad</h3>
+                <p>
+                    Espacio destinado al registro
+                    de actividades del sistema.
+                </p>
+            </div>
+
+        </section>
+
+        <a href="/logout" class="salir">Cerrar sesión</a>
+
+    </main>
+
+    <footer>
+        Laboratorio de Ciberseguridad | Sistema de gestión
+    </footer>
+
+</body>
+</html>

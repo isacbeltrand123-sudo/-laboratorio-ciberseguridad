@@ -1,0 +1,33 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de usuarios</title>
+</head>
+<body>
+
+    <h1>Usuarios registrados</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Correo</th>
+        </tr>
+
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario["id"] }}</td>
+            <td>{{ usuario["usuario"] }}</td>
+            <td>{{ usuario["correo"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{{ url_for('panel') }}">Volver al panel</a>
+
+</body>
+</html>
+```
